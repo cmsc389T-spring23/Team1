@@ -16,6 +16,7 @@ public class PacMan {
   }
 
   public ArrayList<Location> get_valid_moves() {
+    System.out.println("test");
     return null;
   }
 
