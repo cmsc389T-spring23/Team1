@@ -16,8 +16,31 @@ public class PacMan {
   }
 
   public ArrayList<Location> get_valid_moves() {
-    System.out.println("test");
-    return null;
+    ArrayList<Location> moves = new ArrayList<>(4);    
+
+    // check each direction for wall, every other move is valid
+
+    Location north = myLoc.shift(1, 0);
+    // ensure this location is not a wall
+    if (!myMap.getLoc(north).contains(Map.Type.WALL))
+      moves.add(north);  // add north if safe
+    
+    Location east = myLoc.shift(0, 1);
+    // ensure this location is not a wall
+    if (!myMap.getLoc(east).contains(Map.Type.WALL))
+      moves.add(east);  // add east if safe
+    
+    Location south = myLoc.shift(-1, 0);
+    // ensure this location is not a wall
+    if (!myMap.getLoc(south).contains(Map.Type.WALL))
+      moves.add(south);  // add south if safe
+    
+    Location west = myLoc.shift(0, -1);
+    // ensure this location is not a wall
+    if (!myMap.getLoc(west).contains(Map.Type.WALL))
+      moves.add(west);  // add west if safe
+    
+    return moves;
   }
 
   public boolean move() {
