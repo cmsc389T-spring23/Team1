@@ -71,14 +71,14 @@ public class Map {
   public JComponent eatCookie(String name) {
     // update locations, components, field, and cookies
     // the id for a cookie at (10, 1) is tok_x10_y1
-    Location loc = locations.get("pacman");
+    Location loc = locations.get(name);
 
-    if (field.get(this.myLoc).contains(Map.Type.COOKIE)) {
+    if (field.get(loc).contains(Map.Type.COOKIE)) {
       String id = "tok_x" + loc.x + "_y" + loc.y;
       locations.remove(id);
       JComponent ret = components.remove(id);
       field.get(loc).remove(Map.Type.COOKIE);
-      this.cookies -= 1;
+      this.cookies += 1;
 
       return ret;
     }
