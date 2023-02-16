@@ -1,8 +1,7 @@
 package pacman;
 import java.io.*;
 import junit.framework.*;
-import pacman.frames.NoFrame;
-
+//import pacman.frames.NoFrame; // This line has been giving gradle build issues
 import java.awt.Color;
 
 public class TestPacManInRange extends TestCase {
