@@ -18,27 +18,27 @@ public class PacMan {
   public ArrayList<Location> get_valid_moves() {
     ArrayList<Location> moves = new ArrayList<>(4);    
 
-    // check each direction for wall, every other move is valid
+    // check each direction : invalid if it is a wall
 
+    // add north if safe
     Location north = myLoc.shift(1, 0);
-    // ensure this location is not a wall
     if (!myMap.getLoc(north).contains(Map.Type.WALL))
-      moves.add(north);  // add north if safe
-    
+      moves.add(north);
+
+    // add east if safe
     Location east = myLoc.shift(0, 1);
-    // ensure this location is not a wall
     if (!myMap.getLoc(east).contains(Map.Type.WALL))
-      moves.add(east);  // add east if safe
+      moves.add(east);
     
+    // add south if safe
     Location south = myLoc.shift(-1, 0);
-    // ensure this location is not a wall
     if (!myMap.getLoc(south).contains(Map.Type.WALL))
-      moves.add(south);  // add south if safe
-    
+      moves.add(south);
+      
+    // add west if safe
     Location west = myLoc.shift(0, -1);
-    // ensure this location is not a wall
     if (!myMap.getLoc(west).contains(Map.Type.WALL))
-      moves.add(west);  // add west if safe
+      moves.add(west);
     
     return moves;
   }
