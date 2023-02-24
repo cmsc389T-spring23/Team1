@@ -53,12 +53,22 @@ public class Map {
   }
 
   public boolean move(String name, Location loc, Type type) {
-    // update locations, components, and field
-    // use the setLocation method for the component to move it to the new location
+    // retreive current location and component
+    Location currLoc = locations.get(name);
+    
+    // update field
+    // remove the component from its prev location
+    field.get(currLoc).remove(type);
+    // add component to dest location
+    field.get(loc).add(type);
 
-    // test
+    // update component
+    components.get(name).setLocation(loc.x, loc.y);
 
-    return false;
+    // update location (replaces old value)
+    locations.put(name, loc);
+
+    return true;
   }
 
   public HashSet<Type> getLoc(Location loc) {
