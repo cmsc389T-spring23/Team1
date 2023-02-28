@@ -52,4 +52,9 @@ This method takes information about a specific ghost or PacMan and updates the M
 
 The test for this method places a ghost and PacMan into a map and moves them. It asserts that the move is carried out by examining the component's stored location and the map's field structure.
 
+#### `eatCookie(String name)` --> JComponent
+This method takes in a name of a specific player (either PacMan or a ghost), retrieves the location of the player, and consumes a cookie if applicable. The method checks if the current location of the player shares its componenet with a `COOKIE` component. If it does, then it updates the map details to remove the cookie eaten and return the `JComponent` associated to it.
+
+The method is tested by placing two players into the map, where one player is sharing its location with a `COOKIE` and the other is not. In the former case, we assert that the method returns a JComponent associated to the `COOKIE` at the player's current location and ensure the cookie count increases. In the latter case, we assert that the method retuns `null` and that the cookie count remains the same.
+
 <!-- Add other Map functions here -->
