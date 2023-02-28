@@ -16,7 +16,7 @@ public class TestMapEatCookie extends TestCase {
     int cookies = map.getCookies();
 
     Assert.assertNotNull(map.eatCookie("pacman"));
-    assertEquals(cookies - 1, map.getCookies());
+    assertEquals(cookies + 1, map.getCookies());
 
     return;
   }
