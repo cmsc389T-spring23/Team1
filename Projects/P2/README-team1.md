@@ -43,6 +43,11 @@ This method returns a list of all the valid moves a Ghost can make based on its 
 
 The test for this method places a Ghost in the map and tests a case where it is surrounded by empty spaces and one where there is a wall and PacMan. It asserts that the size of the list returned is appropriate and that the moves contained in the list include all spaces around the Ghost except the space with the wall.
 
+#### `attack()` --> boolean
+This method checks whether a Ghost is capable of attacking PacMan by comparing its location to PacMan's. If it does, then it should call the `Map.attack()` function to make the necessary modifications to the map. It uses the sibling `Ghost.is_pacman_in_range()` method to determine its range.
+
+The tests for this method simply places two Ghosts on a map, where one is right next to PacMan and the other is not. Calling `attack()` on the latter case is expected to return `false`, since PacMan is not in range. The other case is expected to return `true`, and based on the implementation of `Map.attack()`, it should also end the game.
+
 <!-- Add other Ghost functions here -->
 
 ### **Map**
