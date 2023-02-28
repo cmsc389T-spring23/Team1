@@ -24,6 +24,11 @@ This method returns a list of all the valid moves PacMan can make based on his c
 
 The test for this method places PacMan in the map and tests a case where PacMan is surrounded by empty spaces and one where there is a wall and a couple ghosts. It asserts that the size of the list returned is appropriate and that the moves contained in the list include all spaces around PacMan except the space with the wall.
 
+#### `consume()` --> JComponent
+This method allows PacMan to consume a `COOKIE` if the component types that it is sharing its location with includes one. If it does, it calls the associated `Map.eatCookie()` function to make the necessary updates. Note that `Map.eatCookie()` will also check whether PacMan's location includes a `COOKIE`, but we make the check within this method first to save time when PacMan is not able to eat a cookie, assuming that this method will be called upon quite frequently.
+
+The two tests for this method places a PacMan able to consume, and a PacMan not able to consume. It calls the `consume()` method respectively on each PacMan and checks for the appropriate return types. Note that it does not check for modified map details as that is not the duty of this method.
+
 <!-- Add other PacMan functions here -->
 
 ### **Ghost**
