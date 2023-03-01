@@ -6,6 +6,6 @@ import java.awt.Color;
 public class TestGhostMove extends TestCase {
 
   public void testGhostMove() throws FileNotFoundException {
-
+    return;
   }
 }
