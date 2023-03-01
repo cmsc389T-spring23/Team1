@@ -21,7 +21,7 @@ public class TestGhostValidMoves extends TestCase {
 
     // ghost with a wall to the left and pacman
     frame = new NoFrame();
-    Ghost ghost = frame.addGhost(new Location(11, 11), "Monsieur Mole", Color.GREEN);
+    ghost = frame.addGhost(new Location(11, 11), "Monsieur Mole", Color.GREEN);
     PacMan pacman = frame.addPacMan(new Location(11, 12));
     assertEquals(3, moves.size());
     assertTrue(moves.contains(new Location(11, 12)));
