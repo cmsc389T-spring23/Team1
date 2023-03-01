@@ -1,5 +1,6 @@
 package pacman;
 import java.io.*;
+import java.util.ArrayList;
 import junit.framework.*;
 import java.awt.Color;
 
