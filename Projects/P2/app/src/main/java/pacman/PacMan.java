@@ -19,7 +19,7 @@ public class PacMan {
     return null;
   }
 
-  public boolean move() {
+  public boolean move() { 
     ArrayList<Location> valid_moves = get_valid_moves();
     if (valid_moves == null || valid_moves.size() == 0) 
       return false;
