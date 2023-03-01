@@ -14,6 +14,11 @@ Team #1 Members:
 ## **Functions**
 ### **PacMan**
 
+#### `move()` --> boolean
+Uses `get_valid_moves()` and if it has an available move it does the first one (index 0)
+
+The test for this function tests when there are no places for the pacman to move which should return false, and tests when there are multiple places for the pacman to move. 
+
 #### `is_ghost_in_range()` --> boolean
 Checks all 8 adjacent tiles to the one where PacMan is currently located by quering the map for the contents of the tile. If a `Map.type.GHOST` is located on any of the 8 tiles, return `true`, otherwise return `false`.
 
@@ -33,6 +38,11 @@ The two tests for this method places a PacMan able to consume, and a PacMan not 
 
 ### **Ghost**
 
+#### `move()` --> boolean
+Uses `get_valid_moves()` and if it has an available move it does the first one (index 0)
+
+The test for this function tests when there are no places for the ghost to move which should return false, and tests when there are multiple places for the ghost to move. 
+
 #### `is_pacman_in_range()` --> boolean
 Checks all 8 adjacent tiles to the one where the Ghost is currently located by quering the map for the contents of the tile. If a `Map.type.PACMAN` is located on any of the 8 tiles, return `true`, otherwise return `false`.
 
@@ -51,6 +61,11 @@ The tests for this method simply places two Ghosts on a map, where one is right 
 <!-- Add other Ghost functions here -->
 
 ### **Map**
+
+#### `getLoc(Location loc)` --> HashSet<Type>
+This method first checks whether the current location is within the pacman game and if it is out of bounds, it returns wallSet. 
+If its in bounds, it checks if the field contains the location, and if it does it returns the value from the hashmap. 
+Otherwise, return emptySet
 
 #### `attack()` --> boolean
 Since this function will only be called in the event that a Ghost is in attack range of PacMan, this function will always update `gameOver = true` and return `true`.
