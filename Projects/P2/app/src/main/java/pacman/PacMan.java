@@ -18,7 +18,7 @@ public class PacMan {
   public ArrayList<Location> get_valid_moves() {
     ArrayList<Location> moves = new ArrayList<>(4);
 
-    // check each direction : invalid if it is a wall 
+    // check each direction : invalid if it is a wall
 
     // add north if safe
     Location north = myLoc.shift(1, 0);
