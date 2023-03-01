@@ -1,5 +1,4 @@
 package pacman;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -23,14 +22,6 @@ public class Ghost {
   }
 
   public boolean is_pacman_in_range() {
-    // Check all 8 adjacent tiles for
-    for (int x = myLoc.x - 1; x <= myLoc.x + 1; x++) {
-      for (int y = myLoc.y - 1; y <= myLoc.y + 1; y++) {
-        if (myMap.getLoc(new Location(x, y)).contains(Map.Type.PACMAN)) {
-          return true;
-        }
-      }
-    }
     return false;
   }
 
