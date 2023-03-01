@@ -26,7 +26,6 @@ public class PacMan {
 
   public boolean is_ghost_in_range() {
     // Check all 8 adjacent tiles for a ghost
-    // Check all 8 adjacent tiles for
     for (int x = myLoc.x - 1; x <= myLoc.x + 1; x++) {
       for (int y = myLoc.y - 1; y <= myLoc.y + 1; y++) {
         if (myMap.getLoc(new Location(x, y)).contains(Map.Type.GHOST)) {
