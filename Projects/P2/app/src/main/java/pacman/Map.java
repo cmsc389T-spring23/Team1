@@ -72,13 +72,7 @@ public class Map {
   }
 
   public HashSet<Type> getLoc(Location loc) {
-    if (loc.x < 0 || loc.x >= dim 
-     || loc.y < 0 || loc.y >= dim) 
-      return wallSet;
-    if (field.containsKey(loc)) {
-        return field.get(loc);
-    } 
-    return emptySet;
+    return null; 
   }
 
   public boolean attack(String Name) {
