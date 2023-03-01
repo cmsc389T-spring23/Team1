@@ -16,9 +16,33 @@ public class PacMan {
   }
 
   public ArrayList<Location> get_valid_moves() {
-    return null;
-  }
+    ArrayList<Location> moves = new ArrayList<>(4);
 
+    // check each direction : invalid if it is a wall 
+
+    // add north if safe
+    Location north = myLoc.shift(1, 0);
+    if (!myMap.getLoc(north).contains(Map.Type.WALL))
+      moves.add(north);
+
+    // add east if safe
+    Location east = myLoc.shift(0, 1);
+    if (!myMap.getLoc(east).contains(Map.Type.WALL))
+      moves.add(east);
+    
+    // add south if safe
+    Location south = myLoc.shift(-1, 0);
+    if (!myMap.getLoc(south).contains(Map.Type.WALL))
+      moves.add(south);
+
+    // add west if safe
+    Location west = myLoc.shift(0, -1);
+    if (!myMap.getLoc(west).contains(Map.Type.WALL))
+      moves.add(west);
+
+    return moves;
+  }
+  
   public boolean move() { 
     ArrayList<Location> valid_moves = get_valid_moves();
     if (valid_moves == null || valid_moves.size() == 0) 
@@ -28,14 +52,25 @@ public class PacMan {
       myMap.move(myName, new_loc, Map.Type.PACMAN);
       return true;
     }
-    
   }
 
   public boolean is_ghost_in_range() {
+    // Check all 8 adjacent tiles for a ghost 
+    for (int x = myLoc.x - 1; x <= myLoc.x + 1; x++) {
+      for (int y = myLoc.y - 1; y <= myLoc.y + 1; y++) {
+        if (myMap.getLoc(new Location(x, y)).contains(Map.Type.GHOST)) {
+          return true;
+        }
+      }
+    }
     return false;
   }
 
   public JComponent consume() {
+    if (myMap.getLoc(this.myLoc).contains(Map.Type.COOKIE)) {
+      JComponent ret = myMap.eatCookie(myName);
+      return ret;
+    }
     return null;
   }
 }
