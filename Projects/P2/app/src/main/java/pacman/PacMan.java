@@ -1,5 +1,4 @@
 package pacman;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import javax.swing.JComponent;
