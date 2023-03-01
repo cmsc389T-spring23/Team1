@@ -59,7 +59,6 @@ public class Map {
   }
 
   public HashSet<Type> getLoc(Location loc) {
-    // return the set of types at the given location
     if (loc.x < 0 || loc.x >= dim 
      || loc.y < 0 || loc.y >= dim) 
       return wallSet;
