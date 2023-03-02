@@ -1,5 +1,6 @@
 package pacman;
 import java.io.*;
+import java.util.ArrayList;
 import junit.framework.*;
 import java.awt.Color;
 
@@ -20,8 +21,9 @@ public class TestGhostValidMoves extends TestCase {
 
     // ghost with a wall to the left and pacman
     frame = new NoFrame();
-    Ghost ghost = frame.addGhost(new Location(11, 11), "Monsieur Mole", Color.GREEN);
+    ghost = frame.addGhost(new Location(11, 11), "Monsieur Mole", Color.GREEN);
     PacMan pacman = frame.addPacMan(new Location(11, 12));
+    moves = ghost.get_valid_moves();
     assertEquals(3, moves.size());
     assertTrue(moves.contains(new Location(11, 12)));
     assertTrue(moves.contains(new Location(11, 10)));
