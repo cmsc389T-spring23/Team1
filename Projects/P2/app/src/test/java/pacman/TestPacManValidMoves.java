@@ -20,7 +20,7 @@ public class TestPacManValidMoves extends TestCase {
 
     // pacman with a wall to the left and ghosts
     frame = new NoFrame();
-    PacMan pacman = frame.addPacMan(new Location(11, 11));
+    pacman = frame.addPacMan(new Location(11, 11));
     Ghost ghost = frame.addGhost(new Location(11, 10), "Sir Noodle", Color.BLUE);
     Ghost ghost = frame.addGhost(new Location(11, 12), "Sir Noodle", Color.BLUE);
     Ghost ghost = frame.addGhost(new Location(12, 11), "Sir Noodle", Color.BLUE);
@@ -28,7 +28,7 @@ public class TestPacManValidMoves extends TestCase {
     assertTrue(moves.contains(new Location(11, 12)));
     assertTrue(moves.contains(new Location(11, 10)));
     assertTrue(moves.contains(new Location(12, 11)));
-    
+
     return;
   }
 }
