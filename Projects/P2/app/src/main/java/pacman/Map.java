@@ -60,8 +60,9 @@ public class Map {
     // remove the component from its prev location
     field.get(currLoc).remove(type);
     // add component to dest location
+    field.put(loc, new HashSet<Type>());
     field.get(loc).add(type);
-
+    
     // update component
     components.get(name).setLocation(loc.x, loc.y);
 
