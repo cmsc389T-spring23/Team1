@@ -1,5 +1,6 @@
 package pacman;
 import java.io.*;
+import java.util.ArrayList;
 import junit.framework.*;
 import java.awt.Color;
 
@@ -11,7 +12,9 @@ public class TestPacManValidMoves extends TestCase {
 
     // pacman center, all empty around
     PacMan pacman = frame.addPacMan(new Location(12, 12));
+    
     ArrayList<Location> moves = pacman.get_valid_moves();
+
     assertEquals(4, moves.size());
     assertTrue(moves.contains(new Location(11, 12)));
     assertTrue(moves.contains(new Location(13, 12)));
@@ -22,8 +25,11 @@ public class TestPacManValidMoves extends TestCase {
     frame = new NoFrame();
     pacman = frame.addPacMan(new Location(11, 11));
     Ghost ghost = frame.addGhost(new Location(11, 10), "Sir Noodle", Color.BLUE);
-    Ghost ghost = frame.addGhost(new Location(11, 12), "Sir Noodle", Color.BLUE);
-    Ghost ghost = frame.addGhost(new Location(12, 11), "Sir Noodle", Color.BLUE);
+    ghost = frame.addGhost(new Location(11, 12), "Sir Noodle", Color.BLUE);
+    ghost = frame.addGhost(new Location(12, 11), "Sir Noodle", Color.BLUE);
+
+    moves = pacman.get_valid_moves();
+    
     assertEquals(3, moves.size());
     assertTrue(moves.contains(new Location(11, 12)));
     assertTrue(moves.contains(new Location(11, 10)));
