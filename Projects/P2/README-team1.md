@@ -8,7 +8,18 @@ Team #1 Members:
 <!-- Image of our code running PacMan -->
 
 ## **Running PacMan from the Command Line**
+First, clone the repository locally
+```
+git clone git@github.com:cmsc389T-spring23/Team1.git
+```
+Ensure you have gradle installed. Then build and run the game with
+```
+gradle run
+```
+The game window should appear like below. Enjoy!
 
+![](./readme_resources/game-running-home-page.png)
+![](./readme_resources/game-running-gameplay.png)
 
 
 ## **Functions**
