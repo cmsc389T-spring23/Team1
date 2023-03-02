@@ -23,6 +23,7 @@ public class TestGhostValidMoves extends TestCase {
     frame = new NoFrame();
     ghost = frame.addGhost(new Location(11, 11), "Monsieur Mole", Color.GREEN);
     PacMan pacman = frame.addPacMan(new Location(11, 12));
+    moves = ghost.get_valid_moves();
     assertEquals(3, moves.size());
     assertTrue(moves.contains(new Location(11, 12)));
     assertTrue(moves.contains(new Location(11, 10)));
