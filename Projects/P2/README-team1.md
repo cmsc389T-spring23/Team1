@@ -18,8 +18,7 @@ gradle run
 ```
 The game window should appear like below. Enjoy!
 
-![](./readme_resources/game-running-home-page.png)
-![](./readme_resources/game-running-gameplay.png)
+<img src=./readme_resources/game-running-home-page.png width="40%" height="40%">  <img src=./readme_resources/game-running-gameplay.png width="40%" height="40%">
 
 
 ## **Functions**
