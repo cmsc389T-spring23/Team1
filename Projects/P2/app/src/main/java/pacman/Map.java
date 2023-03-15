@@ -86,7 +86,7 @@ public class Map {
   public boolean attack(String Name) {
     // The only reason this will ever be called is if the ghost can attack, so always return true.
     gameOver = false;
-    return false;
+    return true;
   }
 
   public JComponent eatCookie(String name) {
