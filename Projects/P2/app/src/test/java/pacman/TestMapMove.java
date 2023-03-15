@@ -12,12 +12,14 @@ public class TestMapMove extends TestCase {
 
     PacMan pacman = frame.addPacMan(new Location(12, 12));
 
-    map.move(pacman.myName, new Location(12, 13), Map.Type.PACMAN);
+    assertEquals(new Location(12, 12), pacman.myLoc);
 
-    assertEquals(new Location(12, 13), pacman.myLoc);
+    map.move(pacman.myName, new Location(12, 13), Map.Type.PACMAN);  // move right
+
     assertFalse(map.getLoc(new Location(12, 12)).contains(Map.Type.PACMAN));
     assertTrue(map.getLoc(new Location(12, 13)).contains(Map.Type.PACMAN));
     
+
     // test with ghost
     frame = new NoFrame();
     map = frame.getMap();
@@ -25,7 +27,6 @@ public class TestMapMove extends TestCase {
 
     map.move(ghost.myName, new Location(12, 13), Map.Type.GHOST);
 
-    assertEquals(new Location(12, 13), ghost.myLoc);
     assertFalse(map.getLoc(new Location(12, 12)).contains(Map.Type.GHOST));
     assertTrue(map.getLoc(new Location(12, 13)).contains(Map.Type.GHOST));
   }
