@@ -59,10 +59,6 @@ public class Map {
     // update field
     // remove the component from its prev location
     field.get(currLoc).remove(type);
-    // add component to dest location
-    if (!field.containsKey(loc)) 
-      field.put(loc, new HashSet<Type>());
-    field.get(loc).add(type);
     
     // update component
     components.get(name).setLocation(loc.x, loc.y);
@@ -70,7 +66,7 @@ public class Map {
     // update location (replaces old value)
     locations.put(name, loc);
 
-    return true;
+    return false;
   }
 
   public HashSet<Type> getLoc(Location loc) {
