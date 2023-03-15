@@ -72,8 +72,8 @@ jobs:
         - name: Test PacMan Consume
           run: |
             cd ./Projects/P2/
-            .gradlew build testClasses -x test
-            .gradlew test --tests TestPacManConsume
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestPacManConsume
 
 
   ghostattack:
@@ -87,8 +87,8 @@ jobs:
         - name: Test Ghost Attack
           run: |
             cd ./Projects/P2/
-            .gradlew build testClasses -x test
-            .gradlew test --tests TestGhostAttack
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestGhostAttack
 
   mapeatcookie:
       # The type of runner that the job will run on
@@ -101,5 +101,5 @@ jobs:
         - name: Test Map Eat Cookie
           run: |
             cd ./Projects/P2/
-            .gradlew build testClasses -x test
-            .gradlew test --tests TestMapEatCookie
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestMapEatCookie
