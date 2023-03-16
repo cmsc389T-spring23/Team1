@@ -158,8 +158,8 @@ jobs:
         - name: Test PacMan Move
           run: |
             cd ./Projects/P2/
-            .gradlew build testClasses -x test
-            .gradlew test --tests TestPacManMove
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestPacManMove
 
   ghostmove:
       # The type of runner that the job will run on
@@ -172,8 +172,8 @@ jobs:
         - name: Test Ghost Move
           run: |
             cd ./Projects/P2/
-            .gradlew build testClasses -x test
-            .gradlew test --tests TestGhostMove
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestGhostMove
             
   mapgetloc:
       # The type of runner that the job will run on
@@ -186,5 +186,5 @@ jobs:
         - name: Test Map GetLoc
           run: |
             cd ./Projects/P2/
-            .gradlew build testClasses -x test
-            .gradlew test --tests TestMapGetLoc
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestMapGetLoc
