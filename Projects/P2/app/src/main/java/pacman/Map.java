@@ -59,10 +59,6 @@ public class Map {
     // update field
     // remove the component from its prev location
     field.get(currLoc).remove(type);
-    // add component to dest location
-    if (!field.containsKey(loc)) 
-      field.put(loc, new HashSet<Type>());
-    field.get(loc).add(type);
     
     // update component
     components.get(name).setLocation(loc.x, loc.y);
@@ -70,22 +66,22 @@ public class Map {
     // update location (replaces old value)
     locations.put(name, loc);
 
-    return true;
+    return false;
   }
 
   public HashSet<Type> getLoc(Location loc) {
     if (loc.x < 0 || loc.x >= dim 
      || loc.y < 0 || loc.y >= dim) 
-      return wallSet;
+      return emptySet;
     if (field.containsKey(loc)) {
         return field.get(loc);
     } 
-    return emptySet;
+    return wallSet;
   }
 
   public boolean attack(String Name) {
     // The only reason this will ever be called is if the ghost can attack, so always return true.
-    gameOver = true;
+    gameOver = false;
     return true;
   }
 
@@ -99,7 +95,7 @@ public class Map {
       locations.remove(id);
       JComponent ret = components.remove(id);
       field.get(loc).remove(Map.Type.COOKIE);
-      this.cookies += 1;
+      this.cookies += 5;
 
       return ret;
     }
