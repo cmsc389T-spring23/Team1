@@ -1,0 +1,190 @@
+name: CI
+
+# Controls when the workflow will run
+on: [push, pull_request, workflow_dispatch]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a set of commands using the runners shell
+      - name: gradle build
+        run: |
+          cd ./Projects/P2/
+          ./gradlew build testClasses -x test
+  
+  # job for pacman get_valid_moves()
+  pacmanGetValidMoves: 
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a set of commands using the runners shell
+      - name: TestPacManValidMoves
+        run: |
+          cd ./Projects/P2/
+          ./gradlew build testClasses -x test
+          ./gradlew test --tests TestPacManValidMoves
+  
+  # job for ghost get_valid_moves()
+  ghostGetValidMoves: 
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a set of commands using the runners shell
+      - name: TestGhostValidMoves
+        run: |
+          cd ./Projects/P2/
+          ./gradlew build testClasses -x test
+          ./gradlew test --tests TestGhostValidMoves
+  
+  # job for map move()
+  mapMove: 
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      # Runs a set of commands using the runners shell
+      - name: TestMapMove
+        run: |
+          cd ./Projects/P2/
+          ./gradlew build testClasses -x test
+          ./gradlew test --tests TestMapMove    
+
+  ghostinrange:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk:13
+      steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
+        # Runs a set of commands using the runners shell
+        - name: Test Ghost in Range
+          run: |
+            cd ./Projects/P2/
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestGhostInRange
+            
+  pacmaninrange:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk:13
+      steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
+        # Runs a set of commands using the runners shell
+        - name: Test PacMan in Range
+          run: |
+            cd ./Projects/P2/
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestPacManInRange
+  
+  mapattack:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk:13
+      steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
+        # Runs a set of commands using the runners shell
+        - name: Test Map Attack
+          run: |
+            cd ./Projects/P2/
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestMapAttack
+
+  pacmanconsume:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk:13
+      steps:
+        #Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
+        # Runs a set of commands using the runners shell
+        - name: Test PacMan Consume
+          run: |
+            cd ./Projects/P2/
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestPacManConsume
+
+  ghostattack:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk:13
+      steps:
+        #Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
+        # Runs a set of commands using the runners shell
+        - name: Test Ghost Attack
+          run: |
+            cd ./Projects/P2/
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestGhostAttack
+
+  mapeatcookie:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk:13
+      steps:
+        #Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
+        # Runs a set of commands using the runners shell
+        - name: Test Map Eat Cookie
+          run: |
+            cd ./Projects/P2/
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestMapEatCookie
+  pacmanmove:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk:13
+      steps:
+        #Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
+        # Runs a set of commands using the runners shell
+        - name: Test PacMan Move
+          run: |
+            cd ./Projects/P2/
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestPacManMove
+
+  ghostmove:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk:13
+      steps:
+        #Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
+        # Runs a set of commands using the runners shell
+        - name: Test Ghost Move
+          run: |
+            cd ./Projects/P2/
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestGhostMove
+            
+  mapgetloc:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk:13
+      steps:
+        #Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
+        # Runs a set of commands using the runners shell
+        - name: Test Map GetLoc
+          run: |
+            cd ./Projects/P2/
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestMapGetLoc
