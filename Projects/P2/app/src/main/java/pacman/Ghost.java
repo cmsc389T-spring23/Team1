@@ -45,11 +45,11 @@ public class Ghost {
   public boolean move() {
     ArrayList<Location> valid_moves = get_valid_moves();
     if (valid_moves == null || valid_moves.size() == 0) 
-      return false;
+      return true;
     else {
       Location new_loc = valid_moves.get(0);
       myMap.move(myName, new_loc, Map.Type.GHOST);
-      return true;
+      return false;
     }
     
   }
