@@ -59,7 +59,7 @@ public class Ghost {
     for (int x = myLoc.x - 1; x <= myLoc.x + 1; x++) {
       for (int y = myLoc.y - 1; y <= myLoc.y + 1; y++) {
         if (myMap.getLoc(new Location(x, y)).contains(Map.Type.PACMAN)) {
-          return false;
+          return true;
         }
       }
     }
