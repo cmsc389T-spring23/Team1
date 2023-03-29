@@ -46,11 +46,11 @@ public class PacMan {
   public boolean move() { 
     ArrayList<Location> valid_moves = get_valid_moves();
     if (valid_moves == null || valid_moves.size() == 0) {
-      return true;
+      return false;
     } else {
       Location new_loc = valid_moves.get(0);
       myMap.move(this.myName, new_loc, Map.Type.PACMAN);
-      return false;
+      return true;
     }
   }
 
