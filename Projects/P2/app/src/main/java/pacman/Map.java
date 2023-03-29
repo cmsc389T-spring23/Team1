@@ -100,7 +100,7 @@ public class Map {
       locations.remove(id);
       JComponent ret = components.remove(id);
       field.get(loc).remove(Map.Type.COOKIE);
-      this.cookies += 5;
+      this.cookies += 1;
 
       return ret;
     }
