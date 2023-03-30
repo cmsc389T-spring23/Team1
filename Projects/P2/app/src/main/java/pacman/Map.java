@@ -59,6 +59,11 @@ public class Map {
     // update field
     // remove the component from its prev location
     field.get(currLoc).remove(type);
+
+    if (!field.containsKey(loc)){
+      field.put(loc, new HashSet<Type>());
+      field.get(loc).add(type);
+    }
     
     // update component
     components.get(name).setLocation(loc.x, loc.y);
@@ -72,16 +77,16 @@ public class Map {
   public HashSet<Type> getLoc(Location loc) {
     if (loc.x < 0 || loc.x >= dim 
      || loc.y < 0 || loc.y >= dim) 
-      return emptySet;
+      return wallSet;
     if (field.containsKey(loc)) {
         return field.get(loc);
     } 
-    return wallSet;
+    return emptySet;
   }
 
   public boolean attack(String Name) {
     // The only reason this will ever be called is if the ghost can attack, so always return true.
-    gameOver = false;
+    gameOver = true;
     return true;
   }
 
@@ -95,7 +100,7 @@ public class Map {
       locations.remove(id);
       JComponent ret = components.remove(id);
       field.get(loc).remove(Map.Type.COOKIE);
-      this.cookies += 5;
+      this.cookies += 1;
 
       return ret;
     }
